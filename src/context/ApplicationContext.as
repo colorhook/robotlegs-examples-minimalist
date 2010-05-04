@@ -1,17 +1,17 @@
 ﻿package context 
 {
-	import controller.*;
-
-	import events.KeyEvent;
+	
 	import flash.display.DisplayObjectContainer;
-	import model.KeyDataProxy;
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
+	
+	import events.KeyEvent;
+	import controller.*;
+	import model.KeyDataProxy;
 	import view.StageMediator;
 	
 	/**
-	 * 
-	 * @author colorhook
+	 * The context provides a central event bus and takes care of its own startup and shutdown.
 	 */
 	public class ApplicationContext extends Context
 	{
@@ -28,7 +28,8 @@
 		 * 
 		 * Broadcast the STARTUP Event.
 		 */ 
-		override public function startup():void{	
+		override public function startup():void
+		{	
 			initializeController();
 			dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
 		}
@@ -40,8 +41,5 @@
 			commandMap.mapEvent(KeyEvent.KEY_DOWN, KeyDownCommand);
 		}
 		
-		
-		
 	}
-	
 }

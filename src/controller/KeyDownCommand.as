@@ -4,7 +4,6 @@
 	import model.KeyDataProxy;
 	import org.robotlegs.mvcs.Command;
 	
-
 	public class KeyDownCommand extends Command
 	{
 		[Inject]public var keyEvent:KeyEvent;
@@ -17,5 +16,4 @@
 		}
 		
 	}
-	
 }
